@@ -14,11 +14,11 @@
     <h1>Productos  registrados </h1>
 
     <div class="d-flex justify-content-end mb-2">
-            <a href="{{  route(productos.create)  }}">    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+            <a href="{{  route('productos.create')  }}">    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
             <button class="btn btn-success me-3"><i class="fa-solid fa-plus"></i> Nuevo producto </button>
             </a>
 
-            <form action="{{route('cerrar')}}" method="POST" >    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+            <form action="{{route('productos.cerrar')}}" method="POST" >    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
                 @csrf
                 <button class="btn btn-danger me-3">Cerrar sesion</button>
             

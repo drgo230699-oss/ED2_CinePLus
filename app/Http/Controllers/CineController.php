@@ -24,19 +24,6 @@ class CineController extends Controller
         return view('Productos.create');
     }
 
-    public function home(){
-        //La variable response maneja la respuesta del API
-        //$response = Http::get('https://www.googleapis.com/books/v1/volumes',[
-        //    'q' => 'subject:fiction',
-        //    'maxResults' => 12,
-        //    'key' => config('services.google_books.key')
-        //]);
-
-        //Usar oéradores ternarios "(??)" para verificar que el libro tiene infomacion 
-        //$productos = $response -> json()['items'] ?? [];
-
-        return view('Productos.index');
-    }
 
 
     public function store(Request $request)
@@ -53,4 +40,46 @@ class CineController extends Controller
         ]);
             return redirect()->route('Productos.create');
     }
+ public function edit(Libro $libro)
+    {
+        #Mandar la vista junto a la informacion del libro 
+        return view('Libros.edit', compact('libro'));
+
+    }
+ /**
+     * ACTUALIZAR REGISTRO 
+     */
+    public function update(Request $request, Producto $producto)
+    {
+        $request -> validate([
+            'nombre' => 'required ', 
+            'estado' => 'required ', 
+            'precio' => 'required ', 
+            'descripción' => 'required ',
+            'tipo' => 'required ',
+            'categoría' => 'required ',
+            'stock' => 'required ',           
+
+        ]);
+
+        //Enviar todos los datos para actualizar 
+        $producto -> update($request -> all()); 
+        //Redireccionar al usuario a los libros 
+        return redirect()-> route('producto.index')-> with('success', 'Registro actualizado :DD  ');
+    }
+public function destroy(Producto $producto)
+    {
+        //Funcion para eliminar el libro 
+        $producto  -> delete(); 
+
+        return  redirect() -> route('producto.index')
+        ->with('success', 'Libro eliminado correctamente');  
+
+
+    }
+
+
+
 }
+
+
