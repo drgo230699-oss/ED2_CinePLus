@@ -32,13 +32,25 @@
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-pen"></i> </span>
-         <input type="text" name="editorial" placeholder="Editorial"  class="form-control">
+         <input type="number" name="precio" placeholder="Precio"  class="form-control">
     </div>
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"> <i class="fa-solid fa-dollar-sign"></i> </span>
-        <input type="number" name="precio" placeholder="Precio"  class="form-control">
+        <input type="text" name="descripción" placeholder="Descripción"  class="form-control">
     </div>
-
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> <i class="fa-solid fa-dollar-sign"></i> </span>
+        <input type="text" name="tipo" placeholder="Tipo"  class="form-control">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> <i class="fa-solid fa-dollar-sign"></i> </span>
+        <input type="text" name="categoría" placeholder="Categoría"  class="form-control">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1"> <i class="fa-solid fa-dollar-sign"></i> </span>
+        <input type="text" name="stock" placeholder="stock"  class="form-control">
+    </div>
+    
     
 
     <button type="submit" class="btn btn-success"> Guardar</button>
@@ -51,11 +63,3 @@
 </html>
 
 
-$table -> String('nombre');    
-            $table -> String('estado');
-            $table -> Double('precio');
-            $table -> String('descripción');
-            $table -> String('tipo');
-            $table -> String('categoría');
-            $table -> String('stock');
-            $table->timestamps();
