@@ -60,7 +60,7 @@ class AuthController extends Controller
 
             //Iniciar sesion y redireccionar al usuario con sesion activa
             $request -> session() -> regenerate();
-            return redirect()->route('producto.index');
+            return redirect()->route('productos.index');
         
             }
         return back()->withErrors([
