@@ -18,7 +18,7 @@
             <button class="btn btn-success me-3"><i class="fa-solid fa-plus"></i> Nuevo producto </button>
             </a>
 
-            <form action="{{route('productos.cerrar')}}" method="POST" >    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+            <form action="{{route('cerrar')}}" method="POST" >    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
                 @csrf
                 <button class="btn btn-danger me-3">Cerrar sesion</button>
             
@@ -31,7 +31,6 @@
             @endif
     </div>
 
-    @include('partials.alerts')
 
 <br><br>
 <table class="table table-striped table-hover"> 
@@ -48,7 +47,7 @@
     </thead>
         <tbody>
      
-            @foreach ($producto as $Producto)
+            @foreach ($productos as $Producto)
 
             <tr>
                 <!--VariableCiclo-BAse de datos-->

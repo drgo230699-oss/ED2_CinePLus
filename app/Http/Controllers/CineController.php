@@ -29,7 +29,7 @@ class CineController extends Controller
     public function store(Request $request)
     {
         //Enviar datos a la BD 
-        Libro::create([
+        CineModel::create([
         'nombre'=>$request-> nombre,
         'estado' =>$request-> estado,
         'precio'=>$request->precio,
