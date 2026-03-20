@@ -2,12 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CineController;
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('productos', CineController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::resource('productos', CineController::class);
+});
 
 //Ruta para el login del sistema
 Route::get('/home',[
