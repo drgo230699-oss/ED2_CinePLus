@@ -10,11 +10,11 @@
      @section('content')
 
 
-    <h1>Registrar libro</h1>    
+    <h1>Registrar produvto</h1>    
 
 <!--Se usa la ruta Libro.Store por que asi se llama el metodo para enviarlo a la BD en LibroController  -->
 
-<form action="{{route('libros.store')}}" method="POST">   <!-- <---PENDIENTE PONER RUTA AQUI -->
+<form action="{{route('productos.store')}}" method="POST">   <!-- <---PENDIENTE PONER RUTA AQUI -->
    
 
 
@@ -51,7 +51,7 @@
         <input type="text" name="stock" placeholder="stock"  class="form-control">
     </div>
     
-    
+
 
     <button type="submit" class="btn btn-success"> Guardar</button>
 
