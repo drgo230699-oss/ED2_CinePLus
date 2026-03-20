@@ -14,7 +14,7 @@
     <h1>Productos  registrados </h1>
 
     <div class="d-flex justify-content-end mb-2">
-            <a href="{{  route()  }}">    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+            <a href="{{  route(productos.create)  }}">    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
             <button class="btn btn-success me-3"><i class="fa-solid fa-plus"></i> Nuevo producto </button>
             </a>
 
