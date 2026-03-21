@@ -18,7 +18,7 @@
             <button class="btn btn-success me-3"><i class="fa-solid fa-plus"></i> Nuevo producto </button>
             </a>
 
-            <form action="{{route('cerrar')}}" method="POST" >    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+            <form action="{{route('productos.cerrar')}}" method="POST" >    <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
                 @csrf
                 <button class="btn btn-danger me-3">Cerrar sesion</button>
             
@@ -31,6 +31,7 @@
             @endif
     </div>
 
+    @include('partials.alerts')
 
 <br><br>
 <table class="table table-striped table-hover"> 
@@ -47,7 +48,7 @@
     </thead>
         <tbody>
      
-            @foreach ($productos as $Producto)
+            @foreach ($producto as $Producto)
 
             <tr>
                 <!--VariableCiclo-BAse de datos-->
@@ -60,13 +61,13 @@
                 <td>{{$Producto -> stock}}</td>
                 <td>
                     <!-- Boton para editar -->
-                    <a href="{{route('libros.edit',$Libro) }}">             <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+                    <a href="{{route('productos.edit',$Producto) }}">             <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
                         <button class="btn btn-warning">
                            <i class="fa-solid fa-pen-to-square"></i>
                         </button>
                     </a>
                     
-                    <form action="{{ route ('libros.destroy', $Libro)}}" method="POST" class="d-inline">   <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
+                    <form action="{{ route ('productos.destroy', $Producto)}}" method="POST" class="d-inline">   <!--   <--FALTA PONER RUTA AQUI!!!!!!!!!!!!!!!!! -->
                         @csrf
                         @method('DELETE')
 

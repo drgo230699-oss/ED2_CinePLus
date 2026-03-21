@@ -43,7 +43,7 @@ class CineController extends Controller
  public function edit(Libro $libro)
     {
         #Mandar la vista junto a la informacion del libro 
-        return view('Libros.edit', compact('libro'));
+        return view('Productos.edit', compact('producto'));
 
     }
  /**
